@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Black Cat</title>
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#141418;
+      --text:#f3f0ea;
+      --muted:#b8b2a7;
+      --line:#2b2b33;
+      --accent:#d7b37c;
+      --accent-2:#8d1f1f;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top, rgba(141,31,31,.18), transparent 35%),
+        linear-gradient(180deg, #09090b 0%, #0b0b0d 45%, #101015 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      width:min(1100px, calc(100% - 2rem));
+      margin:0 auto;
+    }
+
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero{
+      padding:5rem 0 4rem;
+      position:relative;
+      z-index:2;
+    }
+
+    .eyebrow{
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-size:.85rem;
+      margin-bottom:1rem;
+    }
+
+    h1{
+      font-size:clamp(3rem, 8vw, 6.5rem);
+      line-height:.95;
+      margin:0 0 1rem;
+      letter-spacing:.03em;
+    }
+
+    .subtitle{
+      max-width:760px;
+      font-size:clamp(1.1rem, 2vw, 1.4rem);
+      color:var(--muted);
+      margin-bottom:2rem;
+    }
+
+    .hero-card{
+      max-width:760px;
+      background:rgba(20,20,24,.72);
+      border:1px solid rgba(215,179,124,.24);
+      box-shadow:var(--shadow);
+      padding:1.4rem 1.5rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-card p{
+      margin:.2rem 0;
+    }
+
+    .cat-silhouette{
+      position:absolute;
+      right:-8rem;
+      bottom:-4rem;
+      width:min(46vw, 520px);
+      height:min(46vw, 520px);
+      opacity:.12;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .cat-silhouette svg{
+      width:100%;
+      height:100%;
+      fill:var(--accent);
+    }
+
+    main{
+      padding:4rem 0 5rem;
+    }
+
+    .section-title{
+      font-size:1rem;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      color:var(--accent);
+      margin:0 0 1rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:1.25rem;
+      margin-bottom:3rem;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:1.5rem;
+      box-shadow:var(--shadow);
+    }
+
+    .card h2{
+      margin:0 0 .6rem;
+      font-size:1.05rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .divider{
+      text-align:center;
+      color:var(--accent);
+      opacity:.8;
+      font-size:1.2rem;
+      margin:.2rem 0 1rem;
+    }
+
+    .links{
+      margin-top:1rem;
+      background:rgba(20,20,24,.78);
+      border:1px solid rgba(215,179,124,.2);
+      border-radius:20px;
+      padding:1.75rem;
+      box-shadow:var(--shadow);
+    }
+
+    .links h3{
+      margin:0 0 1rem;
+      font-size:1.4rem;
+    }
+
+    .link-list{
+      display:grid;
+      gap:.85rem;
+    }
+
+    .link-item{
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      padding:.95rem 1rem;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.02);
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .link-label{
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+
+    .link-url{
+      color:var(--muted);
+      word-break:break-word;
+      font-size:.95rem;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:1.5rem 0 3rem;
+      color:var(--muted);
+      text-align:center;
+      font-size:.95rem;
+    }
+
+    @media (max-width: 800px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+      .link-item{
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div class="eyebrow">Literary Adaptation / Arthouse Horror</div>
+      <h1>THE BLACK CAT</h1>
+      <p class="subtitle">Reimagining <em>The Black Cat</em> through contemporary anxiety and fractured relationships.</p>
+
+      <div class="hero-card">
+        <p>A place-based, collaborative film project grounded in St. Louis and shaped by filmmakers, scholars, performers, and students.</p>
+      </div>
+    </div>
+
+    <div class="cat-silhouette" aria-hidden="true">
+      <svg viewBox="0 0 512 512">
+        <path d="M399 435c-21 19-58 34-114 34-56 0-90-17-109-34-16-14-16-36-9-52 8-18 12-34 12-55 0-29-16-53-35-76-28-33-37-66-30-102 5-28 22-52 41-74 9-10 20-10 28 1l26 37c7 10 20 10 28 0l28-38c8-11 19-11 27 0l28 38c7 10 21 10 28 0l26-37c8-11 19-11 28-1 20 22 36 46 41 74 7 37-2 69-30 102-19 22-35 46-35 76 0 21 4 37 12 55 7 16 7 38-9 52zm-192-211c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm98 0c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20z"/>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="section-title">Project Focus</div>
+
+      <div class="grid">
+        <section class="card">
+          <h2>LITERARY ADAPTATION / ARTHOUSE HORROR</h2>
+          <p>Reimagining <em>The Black Cat</em> through contemporary anxiety and fractured relationships.</p>
+        </section>
+
+        <section class="card">
+          <h2>ST. LOUIS / PLACE-BASED</h2>
+          <p>Connecting psychological narrative to urban experience, architecture, and local histories.</p>
+        </section>
+
+        <section class="card">
+          <h2>COLLABORATIVE / EDUCATIONAL</h2>
+          <p>Filmmakers, scholars, performers, and students working across disciplines and mentorship.</p>
+        </section>
+
+        <section class="card">
+          <h2>INNOVATION / ACCESS</h2>
+          <p>AI + VFX integrated with traditional filmmaking.<br />Creative Commons release for reuse and community expansion.</p>
+        </section>
+      </div>
+
+      <div class="divider">⸻</div>
+
+      <section class="links" id="links">
+        <h3>Links</h3>
+        <div class="link-list">
+          <div class="link-item">
+            <div>
+              <div class="link-label">Pitchdeck</div>
+              <div class="link-url">docs.google.com/presentation/d/1by7QwjAbz1E49EHL0MV7Z_o5aRuYPqgq</div>
+            </div>
+            <a href="https://docs.google.com/presentation/d/1by7QwjAbz1E49EHL0MV7Z_o5aRuYPqgq/edit?usp=drivesdk&ouid=115884764863827653972&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Open</a>
+          </div>
+
+          <div class="link-item">
+            <div>
+              <div class="link-label">Storyboard</div>
+              <div class="link-url">drive.google.com/file/d/1G_m-aW9Dv_rrlHUYedZHmFps8py8Obco</div>
+            </div>
+            <a href="https://drive.google.com/file/d/1G_m-aW9Dv_rrlHUYedZHmFps8py8Obco/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Open</a>
+          </div>
+
+          <div class="link-item">
+            <div>
+              <div class="link-label">Director Trevor Juenger</div>
+              <div class="link-url">docs.google.com/presentation/d/1S0q1-2LdIBfn5-lC9FLsTbNUjtSxbYnG</div>
+            </div>
+            <a href="https://docs.google.com/presentation/d/1S0q1-2LdIBfn5-lC9FLsTbNUjtSxbYnG/edit?usp=drivesdk&ouid=115884764863827653972&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Open</a>
+          </div>
+
+          <div class="link-item">
+            <div>
+              <div class="link-label">Willa Kate Productions</div>
+              <div class="link-url">willakate.github.io/willa-kate-productions/#what-we-do</div>
+            </div>
+            <a href="https://willakate.github.io/willa-kate-productions/#what-we-do" target="_blank" rel="noopener noreferrer">Open</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    The Black Cat — project page
+  </footer>
+</body>
+</html>
