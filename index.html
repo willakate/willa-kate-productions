@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Willa Kate Productions</title>
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --surface: #fffdf9;
+      --text: #1f1a17;
+      --muted: #6a5f57;
+      --line: #d8cfc6;
+      --accent: #7a4b2a;
+      --accent-soft: #efe5dc;
+      --max: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #f4efe8 0%, #f9f6f1 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(31, 26, 23, 0.08);
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 72px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.96rem;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 88px 0 52px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #e2d2c4;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #3c332e;
+      margin: 0;
+    }
+
+    main {
+      padding-bottom: 80px;
+    }
+
+    section {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin: 0 0 18px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 16px;
+      max-width: 760px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(31, 26, 23, 0.04);
+    }
+
+    ul.feature-list,
+    ul.slate-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    ul.feature-list li,
+    ul.slate-list li {
+      margin: 10px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #4f433b;
+      margin-top: 8px;
+    }
+
+    .slate {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .slate-item {
+      background: var(--surface);
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      border-radius: 16px;
+      padding: 18px 20px;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 780px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      nav a {
+        margin: 0 14px 0 0;
+      }
+
+      .grid,
+      .slate {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">Willa Kate Productions</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#network">Network</a>
+        <a href="#focus">Focus</a>
+        <a href="#slate">Current Slate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="about" aria-labelledby="hero-title" style="border-top: none;">
+      <div class="eyebrow">Missouri-based collaborative film foundation</div>
+      <h1 id="hero-title">Supporting emerging and underrepresented filmmakers across Missouri.</h1>
+      <p class="lead">
+        Willa Kate Productions is a Missouri-based collaborative film foundation supporting emerging and underrepresented filmmakers through shared resources, mentorship, and regional partnerships.
+      </p>
+      <p class="lead" style="margin-top: 16px;">
+        With a central hub in St. Louis and projects across rural Missouri, we connect filmmakers working in different places and contexts—building pathways for independent film beyond traditional production centers.
+      </p>
+    </section>
+
+    <section id="what-we-do">
+      <div class="grid">
+        <div>
+          <h2>What We Do</h2>
+          <p>
+            We operate as a flexible production platform, bringing together directors, writers, and crew on a project-by-project basis.
+          </p>
+          <p>
+            Each film is led by its own creative voice, supported by a consistent network of collaborators.
+          </p>
+        </div>
+        <aside class="card" aria-label="Production support overview">
+          <ul class="feature-list">
+            <li>Shared production support</li>
+            <li>Mentorship and creative collaboration</li>
+            <li>Projects spanning urban and rural communities</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="network">
+      <h2>Our Network</h2>
+      <p>
+        Our work is grounded in an ongoing collaboration between filmmakers, producers, and educators across Missouri, including Pearce Healey and Trevor Juenger, alongside a growing circle of creative partners.
+      </p>
+    </section>
+
+    <section id="focus">
+      <div class="grid">
+        <div>
+          <h2>Our Focus</h2>
+          <p>
+            We prioritize access—supporting emerging filmmakers and expanding opportunities across geographic and cultural boundaries.
+          </p>
+          <p>
+            This includes work with St. Louis–based filmmaker Sarah Blair and other artists developing projects both within the city and in rural communities.
+          </p>
+        </div>
+        <aside class="card">
+          <p class="quote">
+            Building a statewide filmmaking ecosystem through collaboration, mentorship, and shared infrastructure.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="ecosystem">
+      <h2>Building a Regional Ecosystem</h2>
+      <p>
+        Willa Kate Productions is building a connected, statewide filmmaking network—linking St. Louis with rural Missouri and strengthening independent film through collaboration, mentorship, and shared infrastructure.
+      </p>
+    </section>
+
+    <section id="slate">
+      <h2>Current Slate</h2>
+      <div class="slate">
+        <div class="slate-item">The Black Cat</div>
+        <div class="slate-item">Relentless</div>
+        <div class="slate-item">The Haunted Belldown School</div>
+        <div class="slate-item">Before The Light</div>
+        <div class="slate-item">Beyond The Haunting</div>
+        <div class="slate-item">The Locket</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="padding:0;">
+      Willa Kate Productions — St. Louis and rural Missouri
+    </div>
+  </footer>
+</body>
+</html>
